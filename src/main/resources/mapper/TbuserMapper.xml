@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0/EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.thc.fallspradv.mapper.TbuserMapper">
+<mapper namespace="com.ecj.fallspradv.mapper.TbuserMapper">
 
-	<select id="login" parameterType="hashMap" resultType="com.thc.fallspradv.dto.TbuserDto$DetailResDto">
+	<select id="login" parameterType="hashMap" resultType="com.ecj.fallspradv.dto.TbuserDto$DetailResDto">
 		SELECT tbuser.id
 		FROM tbuser
 		WHERE tbuser.username = #{username}
 		  AND tbuser.password = #{password}
 	</select>
 	<!---->
-	<select id="detail" parameterType="hashMap" resultType="com.thc.fallspradv.dto.TbuserDto$DetailResDto">
+	<select id="detail" parameterType="hashMap" resultType="com.ecj.fallspradv.dto.TbuserDto$DetailResDto">
 		SELECT tbuser.id
 			,tbuser.deleted
 			,tbuser.process
@@ -27,7 +27,7 @@
 		FROM tbuser
 		WHERE tbuser.id = #{id}
 	</select>
-	<select id="list" parameterType="hashMap" resultType="com.thc.fallspradv.dto.TbuserDto$DetailResDto">
+	<select id="list" parameterType="hashMap" resultType="com.ecj.fallspradv.dto.TbuserDto$DetailResDto">
 		SELECT tbuser.id
 		FROM tbuser
 		WHERE tbuser.id is not NULL
@@ -39,7 +39,7 @@
 		ORDER BY tbuser.created_at DESC
 	</select>
 
-	<select id="scrollList" parameterType="hashMap" resultType="com.thc.fallspradv.dto.TbuserDto$DetailResDto">
+	<select id="scrollList" parameterType="hashMap" resultType="com.ecj.fallspradv.dto.TbuserDto$DetailResDto">
 		SELECT tbuser.id
 		FROM tbuser
 		WHERE tbuser.id is not NULL
@@ -72,7 +72,7 @@
 		LIMIT 0, #{perpage}
 	</select>
 
-	<select id="pagedList" parameterType="hashMap" resultType="com.thc.fallspradv.dto.TbuserDto$DetailResDto">
+	<select id="pagedList" parameterType="hashMap" resultType="com.ecj.fallspradv.dto.TbuserDto$DetailResDto">
 		SELECT tbuser.id
 		FROM tbuser
 		WHERE tbuser.id is not NULL
